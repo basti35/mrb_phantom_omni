@@ -48,7 +48,7 @@ project(mrb_phantom_omni)
 find_package(catkin REQUIRED COMPONENTS
   matlab_ros_bridge
   roscpp
-  phantom_omni
+  omni_msgs
   cmake_module_matlab
 )
 

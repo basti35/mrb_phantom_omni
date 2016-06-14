@@ -16,12 +16,12 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
-  <build_depend>phantom_omni</build_depend>
+  <build_depend>omni_msgs</build_depend>
   <build_depend>matlab_ros_bridge</build_depend>
   <build_depend>cmake_module_matlab</build_depend>
 
   <run_depend>roscpp</run_depend>
-  <run_depend>phantom_omni</run_depend>
+  <run_depend>omni_msgs</run_depend>
   <run_depend>matlab_ros_bridge</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->

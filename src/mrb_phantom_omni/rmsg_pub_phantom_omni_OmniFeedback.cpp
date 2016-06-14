@@ -58,7 +58,7 @@
 #include <matlab_ros_bridge/GenericPublisher.hpp>
 
 // Message
-#include <phantom_omni/OmniFeedback.h>
+#include <omni_msgs/OmniFeedback.h>
 
 #pragma pop_macro("RT")
 
