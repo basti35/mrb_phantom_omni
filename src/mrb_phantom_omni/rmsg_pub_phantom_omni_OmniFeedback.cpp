@@ -287,8 +287,8 @@ static void mdlStart(SimStruct *S)
         sstream << (uint)robotIDs[i];
     	  sstream << postfix_topic;
 
-        GenericPublisher<phantom_omni::OmniFeedback>* pub
-			= new GenericPublisher<phantom_omni::OmniFeedback>(nodeHandle, sstream.str(), 10);
+        GenericPublisher<omni_msgs::OmniFeedback>* pub
+			= new GenericPublisher<omni_msgs::OmniFeedback>(nodeHandle, sstream.str(), 10);
         vecPWork[i] = pub;
 	}
 
@@ -320,10 +320,10 @@ static void mdlOutputs(SimStruct *S, int_T tid)
     const real_T *position_y = (const real_T*) ssGetInputPortSignal(S,4);
     const real_T *position_z = (const real_T*) ssGetInputPortSignal(S,5);
     
-    phantom_omni::OmniFeedback msg;
+    omni_msgs::OmniFeedback msg;
     for (unsigned int i = 0; i < nRobots; ++i) {
-        GenericPublisher<phantom_omni::OmniFeedback>* pub 
-                = (GenericPublisher<phantom_omni::OmniFeedback>*)vecPWork[i];
+        GenericPublisher<omni_msgs::OmniFeedback>* pub 
+                = (GenericPublisher<omni_msgs::OmniFeedback>*)vecPWork[i];
 
         // define send Time.
         msg.force.x = force_x[i*1 + 0];
@@ -384,7 +384,7 @@ static void mdlTerminate(SimStruct *S)
 
     int_T nRobots = *ssGetIWork(S);
     for (unsigned int i = 0; i < nRobots; ++i) {
-        GenericPublisher<phantom_omni::OmniFeedback>* pub = (GenericPublisher<phantom_omni::OmniFeedback>*)vecPWork[i];
+        GenericPublisher<omni_msgs::OmniFeedback>* pub = (GenericPublisher<omni_msgs::OmniFeedback>*)vecPWork[i];
         // cleanup
         delete pub;
 	}

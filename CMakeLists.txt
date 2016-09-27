@@ -132,7 +132,7 @@ add_definitions(-DMATLAB_MEX_FILE)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES matlab_ros_bridge
-   CATKIN_DEPENDS roscpp phantom_omni matlab_ros_bridge
+   CATKIN_DEPENDS roscpp omni_msgs matlab_ros_bridge
    DEPENDS boost Matlab
 )
 
